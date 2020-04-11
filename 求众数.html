@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>leeCode-求众数</title>
+</head>
+<body>
+    
+</body>
+<script>
+var nums = [1,2,3]
+var subsets = function(nums) {
+    let bigArray = [[]]
+    for(let i= 0;i < nums.length;i++){
+        for(let k = 0, len=bigArray.length;k<len; ++k){
+            bigArray.push(bigArray[k].concat([nums[i]]))
+        }
+    }
+    return bigArray
+}; 
+console.log(subsets(nums))
+// --------------------求众数--------------------start
+// var nums = [3,3,2,3,1,2,2]
+// var majorityElement2 = function(nums) {
+//     let count = 0
+//     let result = 0
+//     nums.forEach(item => {
+//         if (count === 0) result = item
+//         if (result !== item) count--
+//         if (result === item) count++
+//     })
+//     return result
+// };
+// var oo=majorityElement2(nums)
+// console.log(oo)
+// --------------------求众数--------------------start
+</script>
+</html>
