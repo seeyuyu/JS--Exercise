@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+        * @param {number[]} nums
+        * @return {number}
+        */
+        // var removeDuplicates = function(nums) {
+        //     for(let i=1;i<nums.length;i++){
+        //         if(nums[i] ==nums[i-1]){
+        //             nums.splice(i,1);
+        //             i--
+        //         }
+        //     }
+        //     return nums.length
+        // };
+        var removeDuplicates = function(nums) {
+            var j =0
+            for(let i=1;i<nums.length;i++){
+                if(nums[i] !=nums[j]){
+                    nums[++j]=nums[i]
+                }
+            }
+            return j+1
+        };
+        var arr1 =[1,1,2]
+        removeDuplicates(arr1)
+    </script>
+</body>
+</html>

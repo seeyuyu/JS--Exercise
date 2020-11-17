@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 给定一个非负整数数组 A， A 中一半整数是奇数，一半整数是偶数。
+// 对数组进行排序，以便当 A[i] 为奇数时，i 也是奇数；当 A[i] 为偶数时， i 也是偶数。
+// 你可以返回任何满足上述条件的数组作为答案。
+/**
+ * param {number[]} A
+ * return {number[]}
+ */
+// (num%2 ==0) ?"偶数":"奇数"
+var sortArrayByParityII = function(A) {
+    let arr = A
+    for(let i =0;i<arr.length;i=i+2){
+        if(arr[i]%2!=0){
+            for(let j =1;j<arr.length;j=j+2){
+                if(arr[j]%2==0){
+                    let bus =arr[j]
+                    arr[j] = arr[i]
+                    arr[i] = bus
+                }
+            }
+        }
+    }
+    return arr
+};
+var arr1 = [4,2,5,7]
+sortArrayByParityII(arr1)
+    </script>
+</body>
+</html>
