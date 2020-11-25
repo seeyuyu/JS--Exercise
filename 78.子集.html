@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+        * @param {number[]} nums
+        * @return {number[][]}
+        */
+        var subsets = function(nums) {
+            var resultArr = []
+            var tempArr = [[]]
+            for(var i=0;i<nums.length;i++){
+                tempArr.push([nums[i]])
+                for(var j=i+1;j<tempArr.length;j++){
+                    var objString = JSON.stringify(tempArr);
+                    var tempArrCopy = JSON.parse(objString);
+                    tempArr[j].push(nums[i])
+                }
+                // var tempArrCopy = $.extend(true,[],tempArr)
+                var objString = JSON.stringify(tempArr);
+                var tempArrCopy = JSON.parse(objString);
+                console.log(tempArrCopy)
+            }
+        };
+        var arr=[1,2,3]
+        subsets(arr)
+    </script>
+</body>
+</html>
