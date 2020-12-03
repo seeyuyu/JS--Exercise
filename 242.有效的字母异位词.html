@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+        * @param {string} s
+        * @param {string} t
+        * @return {boolean}
+        */
+        var isAnagram = function(s, t) {
+            var sArr = s.split("")
+            var tArr = t.split("")
+            for(var i=0;i<sArr.length;i++){
+                if(i!=sArr.length && tArr.length>1){
+                    for(var j=tArr.length-1;j>0;j--){
+                        if(sArr[i]==tArr[j]){
+                            tArr.splice(j,1)
+                            continue
+                        }
+                        if(j==0){
+                            return false
+                        }
+                    }
+                }else{
+                    return false
+                }
+            }
+            if(tArr.length==0){
+                return true
+            }
+        };
+        var s1 = "anagram"
+        var s2 = "nagaram"
+        isAnagram(s1,s2)
+    </script>
+</body>
+</html>

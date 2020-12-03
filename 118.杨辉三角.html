@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+        * @param {number} numRows
+        * @return {number[][]}
+        */
+        var generate = function(numRows) {
+            var resArr = []
+            
+            for(var i =0;i<numRows;i++){
+                var row = []
+                row[0] = 1;
+                row[i] = 1;
+                if(i>1){
+                    for(var j =1;j<i;j++){
+                        row[j]=resArr[i-1][j-1]+resArr[i-1][j]
+                    }
+                    
+                }
+                resArr.push(row)
+            }
+            console.log(resArr)
+            return resArr
+        };
+        generate(5)
+    </script>
+</body>
+</html>
