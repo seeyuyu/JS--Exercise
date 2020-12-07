@@ -12,21 +12,32 @@
         * @return {number[][]}
         */
         var subsets = function(nums) {
-            var resultArr = []
-            var tempArr = [[]]
-            for(var i=0;i<nums.length;i++){
-                tempArr.push([nums[i]])
-                for(var j=i+1;j<tempArr.length;j++){
-                    var objString = JSON.stringify(tempArr);
-                    var tempArrCopy = JSON.parse(objString);
-                    tempArr[j].push(nums[i])
+            var list= []
+            var res = []
+            // 方法一：
+            // function fn(n,list){
+            //     res.push(list.slice())
+            //     for(var i=n;i<nums.length;i++){
+            //         list.push(nums[i])
+            //         fn(i+1,list)
+            //         list.pop()
+            //     }
+            // }
+            // 方法二：
+            function fn(n,list){
+                if(n==nums.length){
+                    res.push(list.slice())
+                    return
                 }
-                // var tempArrCopy = $.extend(true,[],tempArr)
-                var objString = JSON.stringify(tempArr);
-                var tempArrCopy = JSON.parse(objString);
-                console.log(tempArrCopy)
+                list.push(nums[n])
+                fn(n+1,list)
+                list.pop()
+                fn(n+1,list)
             }
-        };
+            fn(0,list)
+            console.log(list)
+            console.log(res)
+        };    
         var arr=[1,2,3]
         subsets(arr)
     </script>
