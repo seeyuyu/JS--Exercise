@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+        * @param {number[]} nums
+        * @return {number}
+        */
+        var maxSubArray = function(nums) {
+            var sumMax = nums[0]
+            for(var i = 0;i<nums.length;i++){
+                var sum = 0
+                var sumSMax = nums[0]
+                for(var j=i;j<nums.length;j++){
+                    sum+=nums[j]
+                    sumSMax=Math.max(sum,sumSMax)
+                }
+                sumMax=Math.max(sumMax,sumSMax)
+            }
+            console.log(sumMax)
+            return sumMax
+        };
+        var arr = [-2,1,-3,4,-1,2,1,-5,4]
+        maxSubArray(arr)
+    </script>
+</body>
+</html>
