@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+        * @param {number[]} nums
+        * @return {string}
+        */
+        var largestNumber = function(nums) {
+            let sumarr = []
+            // console.log(nums)
+            nums.sort((a,b)=>{
+                let str1 = a+'' , str2 = b+''
+                return (str2+str1)-(str1+str2)
+            })
+            return !nums[0]?'0':nums.join('')
+        };
+        var nums1 = [3,30,34,5,9]
+        largestNumber(nums1)
+    </script>
+</body>
+</html>

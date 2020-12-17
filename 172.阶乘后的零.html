@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+        * @param {number} n
+        * @return {number}
+        */
+        var trailingZeroes = function(n) {
+            if(n<5){
+                return 0
+            }else{
+                let count =Math.floor(n/5)
+                // console.log(count)
+                return count
+            }
+        };
+        let str1 = 16
+        trailingZeroes(str1)
+    </script>
+</body>
+</html>
